@@ -21,12 +21,6 @@ export const deletes = (payload) => {
     }
 }
 
-export const edit = (payload) => {
-    return {
-        type: "EDIT", payload
-    }
-}
-
 export const updatetask = (payload) => {
     console.log(payload)
     return {

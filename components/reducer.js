@@ -3,7 +3,6 @@ const initialState = {
     input: "",
     todos: []
 
-
 }
 
 export const reducer = (state = initialState, action) => {
@@ -31,8 +30,8 @@ export const reducer = (state = initialState, action) => {
 
         /////////////////////EDIT///////////////////////// 
 
-        case "EDIT":
-            return { ...state, title: action.payload }
+        // case "EDIT":
+        //     return { ...state, title: action.payload }
 
         /////////////////////addmodif/////////////////////////
 
@@ -40,7 +39,7 @@ export const reducer = (state = initialState, action) => {
             return { ...state, todos: state.todos.map((el, i) => i === action.payload.id ? { ...el, text: action.payload.task } : el) }
 
         /////////////////////default/////////////////////////    
-        
+
         default:
             return state
 

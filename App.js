@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changeHandler, addTodo, completeTodo, deletes, edit } from './components/action';
+import { changeHandler, addTodo, completeTodo, deletes, updatetask } from './components/action';
 import js from './components/js.jpg';
 import Modale from './components/modale';
 import './App.css';
@@ -25,7 +25,7 @@ function App(props) {
           <Modale index={i} />
           <button className="btnlist" onClick={() => props.completeTodo(i)}>Complete</button>
           <button className="btnlist" onClick={() => props.deletes(i)}>Delete</button>
-          <span style={{ textDecoration: el.isComplete ? 'line-through' : '' }}>{i}:{el.isIdite ? 'sabrin' : ''}{el.text}</span>
+          <span style={{ textDecoration: el.isComplete ? 'line-through' : '' }}>{i}:{el.text}</span>
         </li>
       )
       )}
@@ -48,7 +48,7 @@ const mapDispatchToProps = (dispatch) => {
     addTodo: () => dispatch(addTodo()),
     completeTodo: (i) => dispatch(completeTodo(i)),
     deletes: (i) => dispatch(deletes(i)),
-    edit: (i) => dispatch(edit(i))
+    updatetask: (i) => dispatch(updatetask(i))
   }
 }
 
